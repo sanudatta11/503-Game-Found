@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "author" : "Soumyajit Dutta || Biswarup Banerjee",
+  "name": "503 Game Found",
+  "description": "This is a addon/extension for Google Chrome and Mozilla Firefox for playing games in new tab during your Internet Disconectivity.",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "<Need to be made>",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/code_80-512.png",
+    "48": "images/code_80-512.png",
+    "128": "images/code_80-512.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "catalog.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": false
+  }
+}
