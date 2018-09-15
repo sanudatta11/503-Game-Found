@@ -99,13 +99,12 @@ function updateBrowserAction(disable_sound) {
             chrome.browserAction.setTitle({
                 title: titles[current_status] + "."
             });
-            // chrome.browserAction.setIcon({
-            //   path: {
-            //     "19": "assets/images/" + settings.theme + "/" + current_status + ".png",
-            //     "38": "assets/images/" + settings.theme + "/" + current_status + "x38.png",
-            //   }
-            // });
-
+            chrome.browserAction.setIcon({
+              path: {
+                "19": "assets/images/19/" + current_status + ".png",
+                "38": "assets/images/38/" + current_status + ".png",
+              }
+            });
             // if (!disable_sound && prev_status != current_status && settings.play_sound) {
 
             // }

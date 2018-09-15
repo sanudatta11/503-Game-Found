@@ -8,15 +8,15 @@
   "version": "0.1",
   "browser_action": {
         "default_icon": {
-            "19": "assets/images/logo-default.png",
-            "38": "assets/images/logo-default.png"
+            "19": "assets/images/19/online.png",
+            "38": "assets/images/38/online.png"
         },
         "default_popup": "popup.html"
     },
   "icons": {
-    "16": "assets/images/logo-default.png",
-    "48": "assets/images/logo-default.png",
-    "128": "assets/images/logo-default.png"
+    "16": "assets/images/16/online.png",
+    "48": "assets/images/48/online.png",
+    "128": "assets/images/128/online.png"
   },
   "permissions": [
     "storage",
