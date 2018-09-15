@@ -8,20 +8,19 @@
   "version": "0.1",
   "browser_action": {
         "default_icon": {
-            "19": "",
-            "38": ""
+            "19": "assets/images/logo-default.png",
+            "38": "assets/images/logo-default.png"
         },
         "default_popup": "popup.html"
     },
   "icons": {
-    "16": "",
-    "48": "",
-    "128": ""
+    "16": "assets/images/logo-default.png",
+    "48": "assets/images/logo-default.png",
+    "128": "assets/images/logo-default.png"
   },
   "permissions": [
     "storage",
     "tabs",
-    "history",
     "http://*/*",
     "https://*/*",
     "chrome://favicon/*",
@@ -31,6 +30,9 @@
     "cookies"
   ],
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": [
+      "js/background.js",
+      "js/settings.js"
+    ]
   }
 }

@@ -3,8 +3,10 @@ var titles = {
     offline: "Offline",
     issues: "Connection issues"
 };
-
-
+var defaultSettings = {
+    play_sound: false,
+    theme: "default"
+};
 var audioOnline = new Audio("../assets/sounds/online.mp3");
 var audioOffline = new Audio("../assets/sounds/offline.mp3");
 
@@ -12,6 +14,18 @@ var current_status,
 prev_status,
 current_requests_count = 0;
 
+
+function readSettingsFromLocalStorage() {
+    if (localStorage.getItem("settings")) {
+      var settings = _.extend(defaultSettings, JSON.parse(localStorage.getItem("settings")));
+      if (settings.theme !== "flat1" && settings.theme !== "default") {
+        settings.theme = "default";
+      }
+      return settings;
+    }
+    return defaultSettings;
+  }
+  
 setStatus(navigator.onLine ? "online" : "offline");
 
 updateBrowserAction();
@@ -40,12 +54,12 @@ function updateBrowserAction(disable_sound) {
     var settings = readSettingsFromLocalStorage();
   
     chrome.browserAction.setTitle({ title: titles[current_status] + "." });
-    chrome.browserAction.setIcon({
-      path: {
-        "19": "assets/images/" + settings.theme + "/" + current_status + ".png",
-        "38": "assets/images/" + settings.theme + "/" + current_status + "x38.png",
-      }
-    });
+    // chrome.browserAction.setIcon({
+    //   path: {
+    //     "19": "assets/images/" + settings.theme + "/" + current_status + ".png",
+    //     "38": "assets/images/" + settings.theme + "/" + current_status + "x38.png",
+    //   }
+    // });
 
     if (!disable_sound && prev_status != current_status && settings.play_sound) {
       if (current_status == "online") {
